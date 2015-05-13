@@ -68,6 +68,7 @@ vmap <F5> : w!/tmp/x1<CR>
 vmap <F6> : r /tmp/x1<CR>
 map <F11> :BufExplorer<CR>
 map <Backspace> Xi
+" http://vim.wikia.com/wiki/Search_for_visually_selected_text
 vnoremap * y/<C-R>"<CR>
 
  " Run the current file with rspec
