@@ -68,7 +68,7 @@ vmap <F5> : w!/tmp/x1<CR>
 vmap <F6> : r /tmp/x1<CR>
 map <F11> :BufExplorer<CR>
 map <Backspace> Xi
-vnoremap // y/<C-R>"<CR>
+vnoremap * y/<C-R>"<CR>
 
  " Run the current file with rspec
  map <Leader>rb :call VimuxRunCommand("clear; rspec " . bufname("%"))<CR>
