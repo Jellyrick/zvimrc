@@ -36,6 +36,7 @@ inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
 noremap <CR> :nohlsearch<CR>
 noremap <C-N> :Ack <cword><CR>
 
+noremap t gt
 " select ALL
 "map <C-A> ggVG
 "map <C-D> :wq <CR>
@@ -70,6 +71,7 @@ map <F11> :BufExplorer<CR>
 map <Backspace> Xi
 " http://vim.wikia.com/wiki/Search_for_visually_selected_text
 vnoremap * y/<C-R>"<CR>
+imap <C-u> : <Esc>c0	
 
  " Run the current file with rspec
  map <Leader>rb :call VimuxRunCommand("clear; rspec " . bufname("%"))<CR>
