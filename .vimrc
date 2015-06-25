@@ -36,7 +36,7 @@ inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
 noremap <CR> :nohlsearch<CR>
 noremap <C-N> :Ack <cword><CR>
 
-noremap t gt
+noremap m gt
 " select ALL
 "map <C-A> ggVG
 "map <C-D> :wq <CR>
@@ -100,7 +100,7 @@ imap <C-u> : <Esc>c0
 
 syntax enable
 syntax on
-autocmd FileType c,cpp,py setlocal shiftwidth=4 | set expandtab
+autocmd FileType c,cpp,py,cu setlocal shiftwidth=4 | set expandtab
 
 set nu
 set cursorcolumn
