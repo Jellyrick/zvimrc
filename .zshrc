@@ -133,7 +133,7 @@ command -v keychain > /dev/null && eval `keychain --eval id_rsa`
     zle -N backward-delete-char check-cmd-backward-delete-char
 
 PROMPT="%B%F{magenta}%M%f:%F{green}%/%f-%K{blue}%F{white}[INS]%f%k-%F{white}%#%f%b "
-RPROMPT='%B%F{yellow}%T%f %F{blue}%(?..%? )%(1j.[%j&] .)%f%F{cyan}%n%f %F{red}%f%b'
+RPROMPT='%B%F{yellow}%T%f %F{blue}%(?..%? )%(1j.[%j&] .)%f%F{red}%n%f%b'
 function zle-line-init zle-keymap-select {
     PS1="%B%F{magenta}%M%f:%F{green}%/%f-%K{blue}%F{white}${${KEYMAP/vicmd/[NOR]}/(main|viins)/[INS]}%f%k-%F{white}%#%f%b "
     PS2=$RPS1
