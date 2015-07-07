@@ -39,10 +39,10 @@ noremap <C-N> :Ack <cword>
 noremap m gt
 " select ALL
 "map <C-A> ggVG
-"map <C-D> :wq <CR>
 map <C-L> $v0
 map <C-P> :CtrlP <CR>
 map <C-T> :TlistToggle <CR>
+nmap 0 0w
 nmap <Home> 0
 imap <Home> <ESC>0i
 map <C-S> :w <CR>
