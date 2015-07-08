@@ -73,6 +73,8 @@ map <Backspace> Xi
 vnoremap * y/<C-R>"<CR>
 imap <C-u> : <Esc>c0	
 
+map <Leader>sn :set nu<CR>
+map <Leader>nn :set nonu<CR>
  " Run the current file with rspec
  map <Leader>rb :call VimuxRunCommand("clear; rspec " . bufname("%"))<CR>
 
