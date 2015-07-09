@@ -34,7 +34,7 @@ inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
 
 " hit enter to cancel searched highlight
 noremap <CR> :nohlsearch<CR>
-noremap <C-N> :Ack <cword>
+noremap <C-N> :Ack <cword><CR>
 
 noremap m gt
 " select ALL
