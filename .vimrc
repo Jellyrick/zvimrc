@@ -75,6 +75,8 @@ imap <C-u> : <Esc>c0
 
 map <Leader>sn :set nu<CR>
 map <Leader>nn :set nonu<CR>
+map <Leader>pp :set paste<CR>
+map <Leader>np :set nopaste<CR>
  " Run the current file with rspec
  map <Leader>rb :call VimuxRunCommand("clear; rspec " . bufname("%"))<CR>
 
