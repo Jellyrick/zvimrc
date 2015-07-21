@@ -36,6 +36,7 @@ inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
 noremap <CR> :nohlsearch<CR>
 noremap <C-N> :Ack <cword><CR>
 
+map Q <Nop>
 noremap m gt
 " select ALL
 "map <C-A> ggVG
