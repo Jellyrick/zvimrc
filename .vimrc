@@ -78,7 +78,7 @@ map <Backspace> Xi
 " http://vim.wikia.com/wiki/Search_for_visually_selected_text
 vnoremap * y/<C-R>"<CR>:%s///gn<CR>
 imap <C-u> : <Esc>c0	
-noremap * *:%s///gn<CR>
+" noremap * *:%s///gn<CR>
 
 map <Leader>sn :set nu<CR>
 map <Leader>nn :set nonu<CR>
