@@ -20,13 +20,17 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 let g:ycm_global_ycm_extra_conf = '/home/zhangjiguo/.ycm_extra_conf.py'
-let g:ycm_collect_identifiers_from_tags_files = 1
+"let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_seed_identifiers_with_syntax = 1
 let g:ycm_confirm_extra_conf = 0
+let g:ycm_complete_in_comments = 1
+"let g:ycm_collect_identifiers_from_comments_and_strings = 1
+"let g:ycm_server_use_vim_stdout = 1
+let g:ycm_goto_buffer_command = 'same-buffer'
 nnoremap <leader>gc :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
 nnoremap <C-]> :YcmCompleter GoToDefinitionElseDeclaration<CR>
-let g:EclimCompletionMethod = 'omnifunc'
+"let g:EclimCompletionMethod = 'omnifunc'
 
 set completeopt=longest,menu
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
@@ -36,6 +40,7 @@ inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
 noremap <CR> :nohlsearch<CR>
 noremap <C-N> :Ack <cword><CR>
 
+nnoremap <C-y> <C-a>
 map Q <Nop>
 noremap m gt
 " select ALL
@@ -71,8 +76,9 @@ vmap <F6> : r /tmp/x1<CR>
 map <F11> :BufExplorer<CR>
 map <Backspace> Xi
 " http://vim.wikia.com/wiki/Search_for_visually_selected_text
-vnoremap * y/<C-R>"<CR>
+vnoremap * y/<C-R>"<CR>:%s///gn<CR>
 imap <C-u> : <Esc>c0	
+noremap * *:%s///gn<CR>
 
 map <Leader>sn :set nu<CR>
 map <Leader>nn :set nonu<CR>
