@@ -15,6 +15,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'klen/python-mode'
 Plugin 'benmills/vimux'
 Plugin 'mileszs/ack.vim'
+Plugin 'vim-scripts/taglist.vim'
 "Plugin 'jiangmiao/auto-pairs'
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -27,6 +28,7 @@ let g:ycm_complete_in_comments = 1
 "let g:ycm_collect_identifiers_from_comments_and_strings = 1
 "let g:ycm_server_use_vim_stdout = 1
 let g:ycm_goto_buffer_command = 'same-buffer'
+"let g:ycm_goto_buffer_command = 'vertical-split'
 nnoremap <leader>gc :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
 nnoremap <C-]> :YcmCompleter GoToDefinitionElseDeclaration<CR>
