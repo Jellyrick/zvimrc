@@ -113,7 +113,7 @@ map <Leader>np :set nopaste<CR>
 
 syntax enable
 syntax on
-autocmd FileType c,cpp,py,cu setlocal shiftwidth=4 | set expandtab
+autocmd FileType c,cpp,py,cu setlocal shiftwidth=4 "| set expandtab
 
 set nu
 set cursorcolumn

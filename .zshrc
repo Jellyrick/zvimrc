@@ -157,4 +157,5 @@ export LD_LIBRARY_PATH=/usr/lib/:/usr/lib64/:/usr/local/cuda/lib64/:/usr/lib64/c
 export PATH=/usr/local/cuda/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/ibutils/bin:/sbin:/usr/sbin/:/sbin:/usr/sbin/:/usr/lib64/mpich/bin
 export CPLUS_INCLUDE_PATH=:/usr/include/mpich-x86_64/:/usr/local/cuda/include:/usr/local/cuda/samples/common/inc:/usr/local/include
 #export HYDRA_HOST_FILE=/home/zhangjiguo/machinelist
-export UV_THREADPOOL_SIZE=128
+export UV_THREADPOOL_SIZE=16
+export DMLC_INTERFACE=ib0
