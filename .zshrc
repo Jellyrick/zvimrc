@@ -129,7 +129,7 @@ command -v keychain > /dev/null && eval `keychain --eval id_rsa`
     check-cmd-self-insert() { zle .self-insert && recolor-cmd }
     check-cmd-backward-delete-char() { zle .backward-delete-char && recolor-cmd }
 
-    zle -N self-insert check-cmd-self-insert
+    #zle -N self-insert check-cmd-self-insert
     zle -N backward-delete-char check-cmd-backward-delete-char
 
 PROMPT="%B%F{magenta}%M%f:%F{green}%/%f-%K{blue}%F{white}[INS]%f%k-%F{white}%#%f%b "
@@ -153,9 +153,22 @@ if [ -S $SSH_AUTH_SOCK ] && ! [ -h $SSH_AUTH_SOCK ]; then
     export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
 fi
 
-export LD_LIBRARY_PATH=/usr/lib/:/usr/lib64/:/usr/local/cuda/lib64/:/usr/lib64/cudnn/:/usr/lib64/cudnn-v3/:/usr/lib64/atlas:/usr/lib64/mpich/lib:/usr/local/lib/:/usr/local/opencv-3.1.0/lib:/usr/local/opencv-2.4.13/lib
+export LD_LIBRARY_PATH=/usr/local/opencv-2.4.13/lib:/usr/lib/:/usr/lib64/:/usr/local/cuda/lib64/:/usr/lib64/cudnn/:/usr/lib64/cudnn-v3/:/usr/lib64/atlas:/usr/lib64/mpich/lib:/usr/local/lib/
 export PATH=/usr/local/cuda/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/ibutils/bin:/sbin:/usr/sbin/:/sbin:/usr/sbin/:/usr/lib64/mpich/bin
 export CPLUS_INCLUDE_PATH=:/usr/include/mpich-x86_64/:/usr/local/cuda/include:/usr/local/cuda/samples/common/inc:/usr/local/include
 #export HYDRA_HOST_FILE=/home/zhangjiguo/machinelist
 export UV_THREADPOOL_SIZE=8
 export DMLC_INTERFACE=ib0
+
+typeset -A ZSH_HIGHLIGHT_STYLES
+ZSH_HIGHLIGHT_STYLES[alias]='fg=cyan,bold'
+ZSH_HIGHLIGHT_STYLES[command]='fg=blue,bold'
+ZSH_HIGHLIGHT_STYLES[path]='fg=grey,bg=blue'
+ZSH_HIGHLIGHT_STYLES[single-hyphen-option]='fg=grey'
+ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=grey'
+ZSH_HIGHLIGHT_STYLES[cursor]='bg=blue'
+ZSH_HIGHLIGHT_STYLES[line]='bold'
+ZSH_HIGHLIGHT_STYLES[root]='bg=red'
+
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor root line)
+source ~/.vim/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
