@@ -146,7 +146,7 @@ zle -N zle-keymap-select
 export LANG=en_HK.UTF-8
 export LANGUAGE=en_HK:en
 #export KEYTIMEOUT=0.8
-source ~/.vim/opp.zsh/opp.zsh
+#source ~/.vim/opp.zsh/opp.zsh
 
 if [ -S $SSH_AUTH_SOCK ] && ! [ -h $SSH_AUTH_SOCK ]; then
     ln -sf $SSH_AUTH_SOCK ~/.ssh/ssh_auth_sock
