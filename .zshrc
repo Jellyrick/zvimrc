@@ -10,6 +10,22 @@ bindkey -v
 eval $(dircolors -b)
 # The following lines were added by compinstall
 
+autoload -U select-quoted
+zle -N select-quoted
+for m in visual viopp; do
+  for c in {a,i}{\',\",\`}; do
+    bindkey -M $m $c select-quoted
+  done
+done
+
+autoload -U select-bracketed
+zle -N select-bracketed
+for m in visual viopp; do
+  for c in {a,i}${(s..)^:-'()[]{}<>bB'}; do
+    bindkey -M $m $c select-bracketed
+  done
+done
+
 zstyle ':completion:*' auto-description 'Specify: %d'
 zstyle ':completion:*' completer _expand _complete
 #zstyle ':completion:*' expand prefix suffix
