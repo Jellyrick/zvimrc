@@ -159,3 +159,4 @@ set incsearch
 set hlsearch
 set wildmode=longest,list,full
 set wildmenu
+set ic
