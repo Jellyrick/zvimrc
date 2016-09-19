@@ -115,7 +115,7 @@ syntax enable
 syntax on
 autocmd FileType c,cpp,py,cu setlocal shiftwidth=4 "| set expandtab
 
-set nu
+"set nu
 set cursorcolumn
 set cursorline
 set smarttab
