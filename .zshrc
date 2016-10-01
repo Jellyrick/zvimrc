@@ -79,6 +79,7 @@ alias gst="git status"
 alias gad="git add"
 alias psauxg="ps aux | grep -v grep | grep -i "
 alias watch="watch -d"
+alias history="history -i" # history $start_line $end_line
 
 export EDITOR=vim
 
