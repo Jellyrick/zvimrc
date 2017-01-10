@@ -161,6 +161,7 @@ zle -N zle-keymap-select
 
 export LANG=en_HK.UTF-8
 export LANGUAGE=en_HK:en
+export LC_ALL=en_US.UTF-8  #FIX input chinese garbled in mac tmux
 #export KEYTIMEOUT=0.8
 #source ~/.vim/opp.zsh/opp.zsh
 
