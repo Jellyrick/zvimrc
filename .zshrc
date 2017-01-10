@@ -79,6 +79,7 @@ alias gst="git status"
 alias gad="git add"
 alias psauxg="ps aux | grep -v grep | grep -i "
 alias watch="watch -d"
+alias history="history -i" # history $start_line $end_line
 
 export EDITOR=vim
 
@@ -149,7 +150,7 @@ command -v keychain > /dev/null && eval `keychain --eval id_rsa`
     zle -N backward-delete-char check-cmd-backward-delete-char
 
 PROMPT="%B%F{magenta}%M%f:%F{green}%/%f-%K{blue}%F{white}[INS]%f%k-%F{white}%#%f%b "
-RPROMPT='%B%F{yellow}%D{%H:%M:%S.%.}%f %F{blue}%(?..%? )%(1j.[%j&] .)%f%F{red}%n%f%b'
+RPROMPT='%F{cyan}0ms %B%F{yellow}%D{%H:%M:%S.%.}%f %F{blue}%(?..%? )%(1j.[%j&] .)%f%F{red}%n%f%b'
 function zle-line-init zle-keymap-select {
     PS1="%B%F{magenta}%M%f:%F{green}%/%f-%K{blue}%F{white}${${KEYMAP/vicmd/[NOR]}/(main|viins)/[INS]}%f%k-%F{white}%#%f%b "
     PS2=$RPS1
@@ -158,6 +159,17 @@ function zle-line-init zle-keymap-select {
 zle -N zle-line-init
 zle -N zle-keymap-select
 
+function preexec() {
+    timer=${timer:-$(date +"%s%3N")}
+}
+
+function precmd() {
+  if [ $timer ]; then
+    timer_show=$(($(date +"%s%3N") - $timer))
+    export RPROMPT="%F{cyan}${timer_show}ms %B%F{yellow}%D{%H:%M:%S.%.}%f %F{blue}%(?..%? )%(1j.[%j&] .)%f%F{red}%n%f%b"
+    unset timer
+  fi
+}
 
 export LANG=en_HK.UTF-8
 export LANGUAGE=en_HK:en
