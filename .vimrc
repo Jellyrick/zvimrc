@@ -7,7 +7,8 @@ call vundle#begin()
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'kien/ctrlp.vim'
 Plugin 'godlygeek/tabular'
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vim-scripts/bufexplorer.zip'
@@ -126,7 +127,7 @@ set autoread
 "let g:Powerline_symbols = 'fancy'
 "let g:Powerline_stl_path_style = 'full'
 "let g:airline_powerline_fonts=1
-let g:airline_theme="tomorrow"
+let g:airline_theme="simple"
 let g:airline_section_c = '%F'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_buffers = 0
