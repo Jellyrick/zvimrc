@@ -22,10 +22,17 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 let g:ycm_global_ycm_extra_conf = '/home/zhangjiguo/.ycm_extra_conf.py'
+let g:ycm_min_num_of_chars_for_completion = 3
+let g:ycm_min_num_identifier_candidate_chars = 2
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_filepath_completion_use_working_dir = 1
+let g:ycm_disable_for_files_larger_than_kb = 50
+let g:ycm_filetype_whitelist = { 'python': 1, 'cpp': 1, 'javascript': 1}
 "let g:ycm_collect_identifiers_from_tags_files = 1
-let g:ycm_seed_identifiers_with_syntax = 1
+"let g:ycm_seed_identifiers_with_syntax = 1
 let g:ycm_confirm_extra_conf = 0
-let g:ycm_complete_in_comments = 1
+"let g:ycm_complete_in_comments = 1
 "let g:ycm_collect_identifiers_from_comments_and_strings = 1
 "let g:ycm_server_use_vim_stdout = 1
 let g:ycm_goto_buffer_command = 'same-buffer'
@@ -34,6 +41,7 @@ nnoremap <leader>gc :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
 nnoremap <C-]> :YcmCompleter GoToDefinitionElseDeclaration<CR>
 "let g:EclimCompletionMethod = 'omnifunc'
+"imap JJ  <c-x><c-f> "when file big, use vimcp to complete path
 
 set completeopt=longest,menu
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
