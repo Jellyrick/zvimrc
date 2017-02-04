@@ -62,7 +62,7 @@ bindkey "^N" vi-down-line-or-history
 
 alias ls="ls --color=auto --show-control-chars"
 alias less="less -r"
-alias rm="rm -v"
+alias rm="rm -vi"
 alias ll="ls -alh"
 alias l="ls -lh"
 alias cp="cp -vi"
