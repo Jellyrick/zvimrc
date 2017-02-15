@@ -5,8 +5,6 @@ SAVEHIST=10000
 setopt appendhistory autocd beep extendedglob notify HIST_IGNORE_DUPS SHARE_HISTORY INC_APPEND_HISTORY HIST_SAVE_NO_DUPS HIST_FIND_NO_DUPS EXTENDED_HISTORY HIST_EXPIRE_DUPS_FIRST histignorespace
 bindkey -v
 # End of lines configured by zsh-newuser-install
-#PROMPT='%{ [01;36m%}%n%{[01;34m%}@%{[01;35m%}%M %{[01;33m%}%D %T %{[01;32m%}%/
-#%{[01;31m%}>>%{[m%}'
 eval $(dircolors -b)
 # The following lines were added by compinstall
 
@@ -149,15 +147,18 @@ command -v keychain > /dev/null && eval `keychain --eval id_rsa`
     #zle -N self-insert check-cmd-self-insert
     zle -N backward-delete-char check-cmd-backward-delete-char
 
-PROMPT="%B%F{magenta}%M%f:%F{green}%/%f-%K{blue}%F{white}[INS]%f%k-%F{white}%#%f%b "
-RPROMPT='%F{cyan}0ms %B%F{yellow}%D{%H:%M:%S.%.}%f %F{blue}%(?..%? )%(1j.[%j&] .)%f%F{red}%n%f%b'
-function zle-line-init zle-keymap-select {
-    PS1="%B%F{magenta}%M%f:%F{green}%/%f-%K{blue}%F{white}${${KEYMAP/vicmd/[NOR]}/(main|viins)/[INS]}%f%k-%F{white}%#%f%b "
-    PS2=$RPS1
-    zle reset-prompt
-}
-zle -N zle-line-init
-zle -N zle-keymap-select
+#PROMPT='%{ [01;36m%}%n%{[01;34m%}@%{[01;35m%}%M %{[01;33m%}%D %T %{[01;32m%}%/
+#%{[01;31m%}>>%{[m%}'
+CONNECT_IP=$(echo $SSH_CONNECTION | awk '{print $3}')
+PROMPT="%B%F{red}%n%f%K{blue}%F{white}@%f%k%F{magenta}${CONNECT_IP}%f:%F{green}%/%f -%b "
+RPROMPT='%F{cyan}0ms %B%F{yellow}%D{%H:%M:%S.%.}%f %F{blue}%(?..%? )%(1j.[%j&] .)%f%b'
+#function zle-line-init zle-keymap-select {
+#    PS1="%B%F{red}%n%f%K{blue}%F{white}@%f%k%F{magenta}${CONNECT_IP}%f:%F{green}%/%f -%b "
+#    PS2=$RPS1
+#    zle reset-prompt
+#}
+#zle -N zle-line-init
+#zle -N zle-keymap-select
 
 function preexec() {
     timer=${timer:-$(date +"%s%3N")}
@@ -166,7 +167,7 @@ function preexec() {
 function precmd() {
   if [ $timer ]; then
     timer_show=$(($(date +"%s%3N") - $timer))
-    export RPROMPT="%F{cyan}${timer_show}ms %B%F{yellow}%D{%H:%M:%S.%.}%f %F{blue}%(?..%? )%(1j.[%j&] .)%f%F{red}%n%f%b"
+    export RPROMPT="%F{cyan}${timer_show}ms %B%F{yellow}%D{%H:%M:%S.%.}%f %F{blue}%(?..%? )%(1j.[%j&] .)%f%b"
     unset timer
   fi
 }
