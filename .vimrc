@@ -16,7 +16,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'klen/python-mode'
 Plugin 'benmills/vimux'
 Plugin 'mileszs/ack.vim'
-Plugin 'vim-scripts/taglist.vim'
+"Plugin 'vim-scripts/taglist.vim'
 "Plugin 'jiangmiao/auto-pairs'
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -28,7 +28,7 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_filepath_completion_use_working_dir = 1
 let g:ycm_disable_for_files_larger_than_kb = 50
-let g:ycm_filetype_whitelist = { 'python': 1, 'cpp': 1, 'javascript': 1}
+"let g:ycm_filetype_whitelist = { 'python': 1, 'cpp': 1, 'javascript': 1}
 "let g:ycm_collect_identifiers_from_tags_files = 1
 "let g:ycm_seed_identifiers_with_syntax = 1
 let g:ycm_confirm_extra_conf = 0

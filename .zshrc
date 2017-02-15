@@ -202,3 +202,9 @@ ZSH_HIGHLIGHT_STYLES[root]='bg=red'
 
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor root line)
 source ~/.vim/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.vim/zsh-autosuggestions/zsh-autosuggestions.zsh
+#source ~/.vim/zsh-history-substring-search/zsh-history-substring-search.zsh
+#bindkey '^[[A' history-substring-search-up
+#bindkey '^[[B' history-substring-search-down
+#bindkey -M vicmd 'k' history-substring-search-up
+#bindkey -M vicmd 'j' history-substring-search-down
