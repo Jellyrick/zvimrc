@@ -16,6 +16,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'klen/python-mode'
 Plugin 'benmills/vimux'
 Plugin 'mileszs/ack.vim'
+Plugin 'majutsushi/tagbar'
 "Plugin 'vim-scripts/taglist.vim'
 "Plugin 'jiangmiao/auto-pairs'
 call vundle#end()            " required
@@ -169,3 +170,8 @@ set hlsearch
 set wildmode=longest,list,full
 set wildmenu
 set ic
+
+nmap <F8> :TagbarToggle<CR>
+let g:tagbar_ctags_bin = '/usr/local/ctags-5.8/bin/ctags'
+let g:tagbar_autofocus = 1
+let g:tagbar_autoclose = 1
