@@ -157,7 +157,9 @@ command -v keychain > /dev/null && eval `keychain --eval id_rsa`
 #%{[01;31m%}>>%{[m%}'
 CONNECT_IP=$(echo $SSH_CONNECTION | awk '{print $3}')
 PROMPT="%B%F{red}%n%f%K{blue}%F{white}@%f%k%F{magenta}${CONNECT_IP}%f:%F{green}%/%f %K{blue}-%k%b "
-RPROMPT='%F{cyan}0ms %B%F{blue}%(?..%? )%(1j.[%j&] .)%f%F{yellow}%D{%H:%M:%S.%.}%f%b'
+RPROMPT='%B%F{yellow}%D{%H:%M:%S.%.}%f%b'
+#RPROMPT='%B%F{blue}%(?..%? )%(1j.[%j&] .)%f%F{yellow}%D{%H:%M:%S.%.}%f%b'
+
 #function zle-line-init zle-keymap-select {
 #    PS1="%B%F{red}%n%f%K{blue}%F{white}@%f%k%F{magenta}${CONNECT_IP}%f:%F{green}%/%f -%b "
 #    PS2=$RPS1
@@ -174,7 +176,8 @@ function precmd() {
     export RPROMPT="%B%F{blue}%(?..%? )%(1j.[%j&] .)%f%F{yellow}%D{%H:%M:%S.%.}%f%b"
     if [ $timer ]; then
 	timer_show=$(($(date +"%s%3N") - $timer))
-	export RPROMPT="%F{cyan}${timer_show}ms %B%F{blue}%(?..%? )%(1j.[%j&] .)%f%F{yellow}%D{%H:%M:%S.%.}%f%b"
+	#export RPROMPT="%F{cyan}${timer_show}ms %B%F{blue}%(?..%? )%(1j.[%j&] .)%f%F{yellow}%D{%H:%M:%S.%.}%f%b"
+	export RPROMPT="%F{cyan}${timer_show}ms %B%F{yellow}%D{%H:%M:%S.%.}%f%b"
 	unset timer
     fi
 }
