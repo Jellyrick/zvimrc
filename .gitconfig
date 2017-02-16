@@ -1,0 +1,16 @@
+[diff]
+	        tool = vimdiff
+[difftool]
+	        prompt = No
+[color]
+	        diff = auto
+		        branch = auto
+			        interactive = auto
+				        status = auto
+[user]
+	        name = Jiguo Zhang
+		        email = 75199165@qq.com
+[push]
+	        default = matching
+[http]                                                                                                                                                        
+	        sslVerify = false
