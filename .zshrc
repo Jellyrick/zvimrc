@@ -171,11 +171,12 @@ function preexec() {
 }
 
 function precmd() {
-  if [ $timer ]; then
-    timer_show=$(($(date +"%s%3N") - $timer))
-    export RPROMPT="%F{cyan}${timer_show}ms %B%F{blue}%(?..%? )%(1j.[%j&] .)%f%F{yellow}%D{%H:%M:%S.%.}%f%b"
-    unset timer
-  fi
+    export RPROMPT="%B%F{blue}%(?..%? )%(1j.[%j&] .)%f%F{yellow}%D{%H:%M:%S.%.}%f%b"
+    if [ $timer ]; then
+	timer_show=$(($(date +"%s%3N") - $timer))
+	export RPROMPT="%F{cyan}${timer_show}ms %B%F{blue}%(?..%? )%(1j.[%j&] .)%f%F{yellow}%D{%H:%M:%S.%.}%f%b"
+	unset timer
+    fi
 }
 
 export LANG=en_HK.UTF-8
