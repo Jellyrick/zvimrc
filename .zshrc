@@ -35,6 +35,12 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'm:{a-z}={A-Z}'
 zstyle ':completion:*' preserve-prefix '//[^/]##/'
+zstyle ':completion:*' menu select
+zstyle ':completion:*:commands' list-colors '=*=1;31'
+zstyle ':completion:*:builtins' list-colors '=*=1;38;5;142'
+zstyle ':completion:*:aliases' list-colors '=*=2;38;5;128'
+zstyle ':completion:*:*:kill:*' list-colors '=(#b) #([0-9]#)*( *[a-z])*=34=31=33'
+zstyle ':completion:*:options' list-colors '=^(-- *)=34'
 
 autoload -Uz compinit
 compinit -i
@@ -151,7 +157,7 @@ command -v keychain > /dev/null && eval `keychain --eval id_rsa`
 #%{[01;31m%}>>%{[m%}'
 CONNECT_IP=$(echo $SSH_CONNECTION | awk '{print $3}')
 PROMPT="%B%F{red}%n%f%K{blue}%F{white}@%f%k%F{magenta}${CONNECT_IP}%f:%F{green}%/%f %K{blue}-%k%b "
-RPROMPT='%F{cyan}0ms %B%F{yellow}%D{%H:%M:%S.%.}%f %F{blue}%(?..%? )%(1j.[%j&] .)%f%b'
+RPROMPT='%F{cyan}0ms %B%F{blue}%(?..%? )%(1j.[%j&] .)%f%F{yellow}%D{%H:%M:%S.%.}%f%b'
 #function zle-line-init zle-keymap-select {
 #    PS1="%B%F{red}%n%f%K{blue}%F{white}@%f%k%F{magenta}${CONNECT_IP}%f:%F{green}%/%f -%b "
 #    PS2=$RPS1
@@ -167,7 +173,7 @@ function preexec() {
 function precmd() {
   if [ $timer ]; then
     timer_show=$(($(date +"%s%3N") - $timer))
-    export RPROMPT="%F{cyan}${timer_show}ms %B%F{yellow}%D{%H:%M:%S.%.}%f %F{blue}%(?..%? )%(1j.[%j&] .)%f%b"
+    export RPROMPT="%F{cyan}${timer_show}ms %B%F{blue}%(?..%? )%(1j.[%j&] .)%f%F{yellow}%D{%H:%M:%S.%.}%f%b"
     unset timer
   fi
 }
