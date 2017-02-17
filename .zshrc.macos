@@ -1,5 +1,16 @@
 # Lines configured by zsh-newuser-install
 
+SSH_AGENT_START=$(ps aux | grep ssh-agent | grep -v grep)
+if [ -z $SSH_AGENT_START ]; then
+	ssh-agent
+	ssh-add
+	ssh-add ~/.ssh/root_key_bj
+fi
+TINCD_START=$(ps aux | grep tincd | grep -v grep)
+if [ -z $TINCD_START ]; then
+	sudo tincd -n ttsnet --logfile -d 2
+fi
+
 HISTFILE=~/.histfile
 HISTSIZE=10000
 SAVEHIST=10000
