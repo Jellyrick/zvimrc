@@ -1,4 +1,6 @@
 # Lines configured by zsh-newuser-install
+source ~/.vim/util.sh
+
 HISTFILE=~/.histfile
 HISTSIZE=10000
 SAVEHIST=10000
@@ -158,8 +160,8 @@ command -v keychain > /dev/null && eval `keychain --eval id_rsa`
 CONNECT_IP=$(echo $SSH_CONNECTION | awk '{print $3}')
 PROMPT="%B%F{red}%n%f%K{blue}%F{white}@%f%k%F{magenta}${CONNECT_IP}%f:%F{green}%/%f %K{blue}-%k%b "
 RPROMPT='%B%F{yellow}%D{%H:%M:%S.%.}%f%b'
-#RPROMPT='%B%F{blue}%(?..%? )%(1j.[%j&] .)%f%F{yellow}%D{%H:%M:%S.%.}%f%b'
 
+#RPROMPT='%B%F{blue}%(?..%? )%(1j.[%j&] .)%f%F{yellow}%D{%H:%M:%S.%.}%f%b'
 #function zle-line-init zle-keymap-select {
 #    PS1="%B%F{red}%n%f%K{blue}%F{white}@%f%k%F{magenta}${CONNECT_IP}%f:%F{green}%/%f -%b "
 #    PS2=$RPS1
@@ -176,8 +178,9 @@ function precmd() {
     export RPROMPT="%B%F{yellow}%D{%H:%M:%S.%.}%f%b"
     if [ $timer ]; then
 	timer_show=$(($(date +"%s%3N") - $timer))
-	#export RPROMPT="%F{cyan}${timer_show}ms %B%F{blue}%(?..%? )%(1j.[%j&] .)%f%F{yellow}%D{%H:%M:%S.%.}%f%b"
-	export RPROMPT="%F{cyan}${timer_show}ms %B%F{yellow}%D{%H:%M:%S.%.}%f%b"
+	ms2HR $timer_show #assign elapsed_time in util.sh
+
+	export RPROMPT="%F{cyan}${elapsed_time} %B%F{yellow}%D{%H:%M:%S.%.}%f%b"
 	unset timer
     fi
 }
@@ -185,8 +188,6 @@ function precmd() {
 export LANG=en_HK.UTF-8
 export LANGUAGE=en_HK:en
 export LC_ALL=en_US.UTF-8  #FIX input chinese garbled in mac tmux
-#export KEYTIMEOUT=0.8
-#source ~/.vim/opp.zsh/opp.zsh
 
 if [ -S $SSH_AUTH_SOCK ] && ! [ -h $SSH_AUTH_SOCK ]; then
     ln -sf $SSH_AUTH_SOCK ~/.ssh/ssh_auth_sock
@@ -197,7 +198,6 @@ fi
 #export LD_LIBRARY_PATH=/usr/lib/:/usr/lib64/:/usr/local/cuda/lib64/:/usr/lib64/cudnn/:/usr/lib64/cudnn-v3/:/usr/lib64/atlas:/usr/lib64/mpich/lib:/usr/local/lib
 #export CPLUS_INCLUDE_PATH=:/usr/include/mpich-x86_64/:/usr/local/cuda/include:/usr/local/cuda/samples/common/inc:/usr/local/include
 export PATH=/bin:/usr/bin:/usr/local/cuda/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/ibutils/bin:/sbin:/usr/sbin/:/sbin:/usr/sbin/:/usr/lib64/mpich/bin:/usr/local/pssh-2.3.1/bin
-#export HYDRA_HOST_FILE=/home/zhangjiguo/machinelist
 export UV_THREADPOOL_SIZE=8
 export DMLC_INTERFACE=ib0
 
@@ -214,8 +214,3 @@ ZSH_HIGHLIGHT_STYLES[root]='bg=red'
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor root line)
 source ~/.vim/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.vim/zsh-autosuggestions/zsh-autosuggestions.zsh
-#source ~/.vim/zsh-history-substring-search/zsh-history-substring-search.zsh
-#bindkey '^[[A' history-substring-search-up
-#bindkey '^[[B' history-substring-search-down
-#bindkey -M vicmd 'k' history-substring-search-up
-#bindkey -M vicmd 'j' history-substring-search-down
