@@ -161,8 +161,3 @@ set-option -ga update-environment "SSH_AUTH_SOCK DISPLAY SSH_ASKPASS SSH_AGENT_P
 
 setw -g utf8 on
 set -g status-utf8 on
-
-unbind-key -t vi-copy v
-bind -t vi-copy 'v' begin-selection
-bind-key -t vi-copy 'C-v' rectangle-toggle 
-bind -t vi-copy 'y' copy-selection
