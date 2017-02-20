@@ -184,4 +184,6 @@ ZSH_HIGHLIGHT_STYLES[root]='bg=red'
 
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor root line)
 source ~/.vim/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 source ~/.vim/zsh-autosuggestions/zsh-autosuggestions.zsh
+ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=10
