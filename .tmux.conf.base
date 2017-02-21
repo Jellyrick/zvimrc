@@ -112,7 +112,7 @@ set-option -g status-left-length 80
 # set-option -g status-left '#T |'
 set-window-option -g automatic-rename off # auto name
 set-option -g status-left '#[fg=colour10]s-#S:w#I.p#P#[default]|'
-set-option -g status-right '| #S | #(cut -f1-3 "-d " /proc/loadavg) | %m-%d %R'
+set-option -g status-right '| #S | %m-%d %R'
 set-option -g status-bg colour56
 set-option -g status-fg colour253
 set-window-option -g window-status-current-fg white
@@ -150,14 +150,7 @@ set-window-option -g monitor-activity off
 set -g default-terminal "screen-256color"
 set-option -g base-index 1
 
-#set-option -gw xterm-keys on
-#set -g default-terminal "xterm"
 set-option -ga update-environment "SSH_AUTH_SOCK DISPLAY SSH_ASKPASS SSH_AGENT_PID SSH_CONNECTION WINDOWID XAUTHORITY"
-
-
-#bind R source-file ~/.tmux.conf \; display-message "Config reloaded..."
-#unbind p
-#bind p paste-buffer
 
 setw -g utf8 on
 set -g status-utf8 on
