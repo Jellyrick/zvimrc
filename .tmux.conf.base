@@ -148,7 +148,7 @@ set-window-option -g utf8 on
 set-window-option -g mouse-utf8 on
 set-window-option -g monitor-activity off
 set -g default-terminal "screen-256color"
-set-option -g base-index 1
+set-option -g base-index 0
 
 set-option -ga update-environment "SSH_AUTH_SOCK DISPLAY SSH_ASKPASS SSH_AGENT_PID SSH_CONNECTION WINDOWID XAUTHORITY"
 
