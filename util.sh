@@ -8,38 +8,43 @@ ms2HR() {
     days=$(($_ms / 1000 / 60 / 60 / 24))
 
     _hrs=""
+    flag=false
     if [[ $days != 0 ]]; then
 	_hrs+="$days"
 	_hrs+="d"
-	echo $_hrs
+	flag=true
     fi
     if [[ $hours != 0 ]]; then
-	if [[ $days != 0 ]]; then
+	if $flag; then
 	    _hrs+=":"
 	fi
 	_hrs+="$hours"
 	_hrs+="h"
+	flag=true
     fi
     if [[ $minutes != 0 ]]; then
-	if [[ $hours != 0 ]]; then
+	if $flag; then
 	    _hrs+=":"
 	fi
 	_hrs+="$minutes"
 	_hrs+="m"
+	flag=true
     fi
     if [[ $seconds != 0 ]]; then
-	if [[ $minutes != 0 ]]; then
+	if $flag; then
 	    _hrs+=":"
 	fi
 	_hrs+="$seconds"
 	_hrs+="s"
+	flag=true
     fi
     if [[ $milliseconds != 0 ]]; then
-	if [[ $seconds != 0 ]]; then
+	if $flag; then
 	    _hrs+=":"
 	fi
 	_hrs+="$milliseconds"
 	_hrs+="ms"
+	flag=true
     fi
     elapsed_time=$_hrs
 }
