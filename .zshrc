@@ -187,5 +187,7 @@ ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=10
 if [[ `tmux -V` == "tmux master" ]] && [[ `tmux ls` != "" ]]; then
     if [[ `tmux list-keys | grep new-window` != *"new-window -c \"#{pane_current_path}\""* ]]; then
         tmux bind-key c new-window -c "#{pane_current_path}"
+        tmux bind-key '_' split-window -c "#{pane_current_path}"
+        tmux bind-key '|' split-window -h -c "#{pane_current_path}"
     fi
 fi
