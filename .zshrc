@@ -125,7 +125,7 @@ ulimit -c unlimited
 command -v keychain > /dev/null && eval `keychain --eval id_rsa`
 
 CONNECT_IP=$(echo $SSH_CONNECTION | awk '{print $3}')
-PROMPT="%B%F{red}%n%f%K{blue}%F{white}@%f%k%F{magenta}${CONNECT_IP}%f:%F{green}%/%f: "
+PROMPT="%B%F{red}%n%f%K{blue}%F{white}@%f%k%F{magenta}${CONNECT_IP}%f:%F{green}%/%f:%b "
 RPROMPT='%B%F{yellow}%D{%H:%M:%S.%.}%f%b'
 
 #RPROMPT='%B%F{blue}%(?..%? )%(1j.[%j&] .)%f%F{yellow}%D{%H:%M:%S.%.}%f%b'

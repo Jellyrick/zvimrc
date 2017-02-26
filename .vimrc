@@ -80,8 +80,6 @@ map <C-\> \cu<Esc>
 imap <C-\> <Esc>\cu<Esc>
 map <F9> <Esc>:tabm
 imap <F9> <Esc>:tabm
-"imap <F7> <Esc>:set paste<CR>
-"imap <F8> <Esc>:set nopaste<CR>
 noremap <F5> :silent! e!<CR>
 vmap <F5> : w!/tmp/x1<CR>
 vmap <F6> : r /tmp/x1<CR>
@@ -92,10 +90,9 @@ vnoremap * y/<C-R>"<CR>:%s///gn<CR>
 imap <C-u> : <Esc>c0	
 " noremap * *:%s///gn<CR>
 
+set pastetoggle=<F2>
 map <Leader>sn :set nu<CR>
 map <Leader>nn :set nonu<CR>
-map <Leader>pp :set paste<CR>
-map <Leader>np :set nopaste<CR>
  " Run the current file with rspec
  map <Leader>rb :call VimuxRunCommand("clear; rspec " . bufname("%"))<CR>
 
