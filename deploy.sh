@@ -15,6 +15,7 @@ done
 if [ $MACHINE == "NODE" ]; then
 	ln -fs ~/.vim/.tmux.conf ~/
 	ln -fs ~/.vim/.zshrc ~/
+	ln -fs ~/.vim/.ycm_extra_conf.py ~/
 elif [ $MACHINE == "MASTER" ]; then
 	ln -fs ~/.vim/.tmux.conf.base ~/.tmux.conf
 	ln -fs ~/.vim/.zshrc.macos ~/.zshrc
