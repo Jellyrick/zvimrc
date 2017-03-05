@@ -11,7 +11,7 @@ ms2HR() {
     flag=false
     if [[ $days != 0 ]]; then
 	_hrs+="$days"
-	_hrs+="d"
+	_hrs+="D"
 	flag=true
     fi
     if [[ $hours != 0 ]]; then
@@ -19,7 +19,7 @@ ms2HR() {
 	    _hrs+=":"
 	fi
 	_hrs+="$hours"
-	_hrs+="h"
+	_hrs+="H"
 	flag=true
     fi
     if [[ $minutes != 0 ]]; then
@@ -27,7 +27,7 @@ ms2HR() {
 	    _hrs+=":"
 	fi
 	_hrs+="$minutes"
-	_hrs+="m"
+	_hrs+="M"
 	flag=true
     fi
     if [[ $seconds != 0 ]]; then
@@ -43,7 +43,7 @@ ms2HR() {
 	    _hrs+=":"
 	fi
 	_hrs+="$milliseconds"
-	_hrs+="ms"
+	_hrs+="m"
 	flag=true
     fi
     elapsed_time=$_hrs
