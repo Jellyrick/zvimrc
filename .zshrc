@@ -164,7 +164,7 @@ fi
 # use -Wl,-rpath=xxx,-rpath-link=xxx -L -I代替
 #export LD_LIBRARY_PATH=/usr/lib/:/usr/lib64/:/usr/local/cuda/lib64/:/usr/lib64/cudnn/:/usr/lib64/cudnn-v3/:/usr/lib64/atlas:/usr/lib64/mpich/lib:/usr/local/lib
 #export CPLUS_INCLUDE_PATH=:/usr/include/mpich-x86_64/:/usr/local/cuda/include:/usr/local/cuda/samples/common/inc:/usr/local/include
-export PATH=/bin:/usr/bin:/usr/local/cuda/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/ibutils/bin:/sbin:/usr/sbin/:/sbin:/usr/sbin/:/usr/lib64/mpich/bin:/usr/local/pssh-2.3.1/bin
+export PATH=~/bin/:/bin:/usr/bin:/usr/local/cuda/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/ibutils/bin:/sbin:/usr/sbin/:/sbin:/usr/sbin/:/usr/lib64/mpich/bin:/usr/local/pssh-2.3.1/bin:/usr/local/node-v6.10.1/bin
 export UV_THREADPOOL_SIZE=8
 export DMLC_INTERFACE=ib0
 

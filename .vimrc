@@ -14,9 +14,11 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'vim-scripts/bufexplorer.zip'
 Plugin 'tpope/vim-surround'
 Plugin 'klen/python-mode'
-Plugin 'benmills/vimux'
+"Plugin 'benmills/vimux'
 Plugin 'mileszs/ack.vim'
 Plugin 'majutsushi/tagbar'
+"Plugin 'vim-scripts/EnhancedJumps'
+"Plugin 'vim-scripts/ingo-library'
 "Plugin 'vim-scripts/taglist.vim'
 "Plugin 'jiangmiao/auto-pairs'
 call vundle#end()            " required
@@ -36,8 +38,7 @@ let g:ycm_confirm_extra_conf = 0
 "let g:ycm_complete_in_comments = 1
 "let g:ycm_collect_identifiers_from_comments_and_strings = 1
 "let g:ycm_server_use_vim_stdout = 1
-let g:ycm_goto_buffer_command = 'same-buffer'
-"let g:ycm_goto_buffer_command = 'vertical-split'
+let g:ycm_goto_buffer_command = 'new-or-existing-tab'
 nnoremap <leader>gc :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
 nnoremap <C-]> :YcmCompleter GoToDefinitionElseDeclaration<CR>
@@ -83,7 +84,7 @@ imap <F9> <Esc>:tabm
 noremap <F5> :silent! e!<CR>
 vmap <F5> : w!/tmp/x1<CR>
 vmap <F6> : r /tmp/x1<CR>
-map <F11> :BufExplorer<CR>
+map <F12> :BufExplorer<CR>
 map <Backspace> Xi
 " http://vim.wikia.com/wiki/Search_for_visually_selected_text
 vnoremap * y/<C-R>"<CR>:%s///gn<CR>
@@ -91,32 +92,6 @@ imap <C-u> : <Esc>c0
 " noremap * *:%s///gn<CR>
 
 set pastetoggle=<F2>
-map <Leader>sn :set nu<CR>
-map <Leader>nn :set nonu<CR>
- " Run the current file with rspec
- map <Leader>rb :call VimuxRunCommand("clear; rspec " . bufname("%"))<CR>
-
- " Prompt for a command to run
- map <Leader>vp :VimuxPromptCommand<CR>
-
- " Run last command executed by VimuxRunCommand
- map <Leader>vl :VimuxRunLastCommand<CR>
-
- " Inspect runner pane
- map <Leader>vi :VimuxInspectRunner<CR>
-
- " Close vim tmux runner opened by VimuxRunCommand
- map <Leader>vq :VimuxCloseRunner<CR>
-
- " Interrupt any command running in the runner pane
- map <Leader>vx :VimuxInterruptRunner<CR>
-
- " Zoom the runner pane (use <bind-key> z to restore runner pane)
- map <Leader>vz :call VimuxZoomRunner()<CR>
- "
-"inoremap ( ()<LEFT>
-"inoremap [ []<LEFT>
-"inoremap { {}<LEFT>
 
 syntax enable
 syntax on
@@ -168,7 +143,15 @@ set wildmode=longest,list,full
 set wildmenu
 set ic
 
+nmap <F7> :reg<CR>
 nmap <F8> :TagbarToggle<CR>
 let g:tagbar_ctags_bin = '/usr/local/ctags-5.8/bin/ctags'
 let g:tagbar_autofocus = 1
 let g:tagbar_autoclose = 1
+
+let g:lasttab = 1
+nmap <C-H> :exe "tabn ".g:lasttab<CR>
+au TabLeave * let g:lasttab = tabpagenr()
+
+source ~/.vim/bundle/zjump.vim
+nmap <C-O> :call NCO()<CR>
