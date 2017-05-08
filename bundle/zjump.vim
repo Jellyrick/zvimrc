@@ -75,6 +75,8 @@ function! NCO()
 	if filereadable(l:fp) && has_key(l:tabs_dict, l:text)
 	    let l:t = l:tabs_dict[l:text]
 	    execute 'tabn ' . l:t
+	else
+	    execute "normal \<C-O>"
 	endif
     endif
     execute 'call cursor(' . l:jump_dict['ln'] . ', ' . (l:jump_dict['col'] + 1) . ')'

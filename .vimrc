@@ -153,5 +153,5 @@ let g:lasttab = 1
 nmap <C-H> :exe "tabn ".g:lasttab<CR>
 au TabLeave * let g:lasttab = tabpagenr()
 
-source ~/.vim/bundle/zjump.vim
-nmap <C-O> :call NCO()<CR>
+"source ~/.vim/bundle/zjump.vim
+"nmap <C-[> :call NCO()<CR>
