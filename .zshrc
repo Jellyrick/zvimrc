@@ -92,6 +92,7 @@ alias watch="watch -d"
 alias history="history -i" # history $start_line $end_line
 
 [ -f /usr/local/tmux-master/bin/tmux ] && alias tmux='/usr/local/tmux-master/bin/tmux -2u' || alias tmux="tmux -2 -u"
+[ -f /usr/local/zsh-master/bin/zsh ] && alias zsh='/usr/local/zsh-master/bin/zsh' || which zsh
 
 export EDITOR=vim
 
