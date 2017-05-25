@@ -66,6 +66,8 @@ bindkey -M viins '^S' history-incremental-pattern-search-forward
 bindkey "^P" vi-up-line-or-history
 bindkey "^N" vi-down-line-or-history
 
+alias vim="/usr/local/vim-8.0.0599/bin/vim"
+alias vimdiff="/usr/local/vim-8.0.0599/bin/vimdiff"
 alias ls="ls --color=auto --show-control-chars"
 alias less="less -r"
 alias rm="rm -vi"

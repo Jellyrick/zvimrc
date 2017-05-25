@@ -155,3 +155,5 @@ au TabLeave * let g:lasttab = tabpagenr()
 
 "source ~/.vim/bundle/zjump.vim
 "nmap <C-[> :call NCO()<CR>
+
+set backspace=2
