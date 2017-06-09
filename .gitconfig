@@ -1,16 +1,22 @@
 [diff]
-	        tool = vimdiff
+	tool = vimdiff
 [difftool]
-	        prompt = No
+	prompt = No
+[difftool "vimdiff"]
+	path = /usr/local/vim-8.0.0599/bin/vimdiff
+[merge]
+	tool = vimdiff
+[mergetool "vimdiff"]
+	path = /usr/local/vim-8.0.0599/bin/vimdiff
+[mergetool]
+	prompt = false
 [color]
-	        diff = auto
-		        branch = auto
-			        interactive = auto
-				        status = auto
+	diff = auto
+	branch = auto
+	interactive = auto
+	status = auto
 [user]
-	        name = Jiguo Zhang
-		        email = 75199165@qq.com
+	name = Jiguo Zhang
+	email = 75199165@qq.com
 [push]
-	        default = matching
-[http]                                                                                                                                                        
-	        sslVerify = false
+	default = matching
