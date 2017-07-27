@@ -1,5 +1,9 @@
 #!/bin/bash
-MACHINES='172.25.52.93'
+if [ $# -lt 1 ]; then
+	echo "miss argument"	
+	exit 1
+fi
+MACHINES=$1
 pssh -H $MACHINES "cd /home/zhangjiguo; rm -fr ~/.vim"
 prsync -avzrH $MACHINES /home/zhangjiguo/.vim /home/zhangjiguo/
 prsync -avzr -H $MACHINES /usr/local/zsh-master /home/zhangjiguo/
