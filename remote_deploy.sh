@@ -14,3 +14,4 @@ pssh -t0 -Px '-A -tt' -H "$MACHINES" "sudo cp -fr /home/zhangjiguo/zsh-master /u
 pssh -t0 -Px '-A -tt' -H "$MACHINES" "sudo cp -fr /home/zhangjiguo/vim-8.0.0599 /usr/local && rm -fr /home/zhangjiguo/vim-8.0.0599"
 pssh -t0 -Px '-A -tt' -H "$MACHINES" "sudo chown -R root:root /usr/local/tmux-master /usr/local/zsh-master /usr/local/vim-8.0.0599"
 pssh -t0 -Px '-A -tt' -H "$MACHINES" "sudo chsh -s /usr/local/zsh-master/bin/zsh zhangjiguo"
+pssh -t0 -Px '-A -tt' -H "$MACHINES" "cd /home/zhangjiguo/.vim; sh deploy.sh"
