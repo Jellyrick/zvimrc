@@ -58,7 +58,8 @@ bindkey -M vicmd '^J' vi-backward-word
 bindkey -M viins '^J' vi-backward-word
 bindkey -M vicmd '^K' vi-forward-word-end
 bindkey -M viins '^K' vi-forward-word-end
-bindkey -M viins "^D" vi-kill-eol
+bindkey -M viins "^v" vi-kill-eol
+bindkey -M viins "^D" kill-word
 bindkey -M vicmd '/' history-incremental-pattern-search-backward
 bindkey -M vicmd '?' history-incremental-pattern-search-forward
 bindkey -M viins '^R' history-incremental-pattern-search-backward
