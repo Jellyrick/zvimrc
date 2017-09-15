@@ -75,7 +75,8 @@ alias rm="rm -vi"
 alias ll="ls -alh"
 alias l="ls -lh"
 alias cp="cp -vi"
-alias grep='if [ ! -t 0 ]; then text=$(< /dev/stdin); fi; zgrep() {if [ ! -z "$text" ]; then content=$text; unset text; echo "$content" | grep --color=auto "$1" | grep --color=auto -v grep; else grep --color=auto $*; fi;}; zgrep'
+#alias grep='if [ ! -t 0 ]; then text=$(< /dev/stdin); fi; zgrep() {if [ ! -z "$text" ]; then content=$text; unset text; em=""; for x in $*; do [[ ${x} =~ ^-.*$ ]] && em="$em $x"; done; echo $em; echo "$content" | grep --color=auto $em $1 | grep --color=auto -v grep; else grep --color=auto $*; fi;}; zgrep'
+alias grep="grep --color=auto"
 alias mv="mv -iv"
 alias ping="ping -n"
 alias rsync="rsync -avzP"
