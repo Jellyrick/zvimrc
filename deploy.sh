@@ -25,3 +25,4 @@ fi
 ln -fs ~/.vim/.vimrc ~/
 ln -fs ~/.vim/.gitconfig ~/
 ln -fs ~/.vim/.jupyter ~/
+ln -fs ~/.vim/.config ~/
