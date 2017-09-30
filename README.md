@@ -1,7 +1,7 @@
 ### Install zxxrc
 1. `git clone git@github.com:Jellyrick/zxxrc.git --recursive`
-2. `git submodule update --init --recursive # if forget --recursive in clone        
-3. `git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim  
+2. `git submodule update --init --recursive # if forget --recursive in clone`                
+3. `git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`  
 4. `vim :PluginInstall`
 
 ### Install zsh master
