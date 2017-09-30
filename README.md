@@ -1,20 +1,18 @@
-git clone git@github.com:Jellyrick/zxxrc.git --recursive
-git submodule update --init --recursive # if forget --recursive in clone
-
-my .vimrc .zshrc
-
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-vim :PluginInstall
+### Install zxxrc
+1. `git clone git@github.com:Jellyrick/zxxrc.git --recursive`
+2. `git submodule update --init --recursive # if forget --recursive in clone        
+3. `git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim  
+4. `vim :PluginInstall`
 
 ### Install zsh master
-`sh Util/preconfig`
-`./configure --prefix=/usr/local/zsh-master`
-`sudo make -j9`
-`sudo make install`
-`make check`
+1. `sh Util/preconfig`
+2. `./configure --prefix=/usr/local/zsh-master`
+3. `sudo make -j9`
+4. `sudo make install`
+5. `make check`
 
 ### Install vim master
-`./configure --with-features=huge \    
+1. `./configure --with-features=huge \    
             --enable-multibyte \
             --enable-rubyinterp=yes \
             --enable-pythoninterp=yes \
@@ -26,11 +24,11 @@ vim :PluginInstall
             --enable-cscope \
             --prefix=/usr/local/vim-8.x`
 
-`make -j16`
-`sudo make install`
+2. `make -j16`
+3. `sudo make install`
 
 ### Install tmux master
-`sh autogen.sh`
-`./configure --prefix=/usr/local/tmux-master`
-`make -j16`
-`sudo make install`
+1. `sh autogen.sh`
+2. `./configure --prefix=/usr/local/tmux-master`
+3. `make -j16`
+4. `sudo make install`
