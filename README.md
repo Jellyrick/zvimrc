@@ -7,7 +7,7 @@
 ### Install zsh master
 1. `sh Util/preconfig`
 2. `./configure --prefix=/usr/local/zsh-master`
-3. `sudo make -j9`
+3. `make -j9`
 4. `sudo make install`
 5. `make check`
 
