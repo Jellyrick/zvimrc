@@ -24,6 +24,7 @@ else
 fi
 ln -fs ~/.vim/.vimrc ~/
 ln -fs ~/.vim/.gitconfig ~/
+rm -fr ~/.jupyter
 ln -fs ~/.vim/.jupyter ~/
 rm -fr ~/.config
 ln -fs ~/.vim/.config ~/
