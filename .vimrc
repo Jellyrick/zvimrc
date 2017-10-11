@@ -79,11 +79,14 @@ map <C-_> \cc <Esc>
 imap <C-_> <Esc>\cc <Esc>
 map <C-\> \cu<Esc>
 imap <C-\> <Esc>\cu<Esc>
+set pastetoggle=<F6>
+"noremap <F5> :silent! e!<CR>
+"vmap <F5> : w!/tmp/x1<CR>
+"vmap <F6> : r /tmp/x1<CR>
+nmap <F7> :reg<CR>
+nmap <F8> :TagbarToggle<CR>
 map <F9> <Esc>:tabm
 imap <F9> <Esc>:tabm
-noremap <F5> :silent! e!<CR>
-vmap <F5> : w!/tmp/x1<CR>
-vmap <F6> : r /tmp/x1<CR>
 map <F12> :BufExplorer<CR>
 map <Backspace> Xi
 " http://vim.wikia.com/wiki/Search_for_visually_selected_text
@@ -91,7 +94,6 @@ vnoremap * y/<C-R>"<CR>:%s///gn<CR>
 imap <C-u> : <Esc>c0	
 " noremap * *:%s///gn<CR>
 
-set pastetoggle=<F2>
 
 syntax enable
 syntax on
@@ -143,8 +145,6 @@ set wildmode=longest,list,full
 set wildmenu
 set ic
 
-nmap <F7> :reg<CR>
-nmap <F8> :TagbarToggle<CR>
 let g:tagbar_ctags_bin = '/usr/local/ctags-5.8/bin/ctags'
 let g:tagbar_autofocus = 1
 let g:tagbar_autoclose = 1
