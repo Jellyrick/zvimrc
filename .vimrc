@@ -15,7 +15,7 @@ Plugin 'vim-scripts/bufexplorer.zip'
 Plugin 'tpope/vim-surround'
 Plugin 'klen/python-mode'
 "Plugin 'benmills/vimux'
-Plugin 'mileszs/ack.vim'
+Plugin 'mileszs/ack.vim' " sudo yum install ack
 Plugin 'majutsushi/tagbar'
 "Plugin 'vim-scripts/EnhancedJumps'
 "Plugin 'vim-scripts/ingo-library'
