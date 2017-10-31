@@ -141,8 +141,6 @@ let g:ackhighlight = 1
 
 set incsearch
 set hlsearch
-set wildmode=longest,list,full
-set wildmenu
 set ic
 
 let g:tagbar_ctags_bin = '/usr/local/ctags-5.8/bin/ctags'
@@ -157,3 +155,5 @@ au TabLeave * let g:lasttab = tabpagenr()
 "nmap <C-[> :call NCO()<CR>
 
 set backspace=2
+set wildmenu wildmode=full 
+set wildchar=<Tab> wildcharm=<C-Z>
