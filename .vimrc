@@ -60,7 +60,7 @@ noremap m gt
 "map <C-A> ggVG
 map <C-L> $v0
 map <C-P> :CtrlP <CR>
-map <C-T> :TlistToggle <CR>
+noremap <c-t> :b <c-z>
 "nmap 0 0w " use ^ substitute
 nmap <Home> 0
 imap <Home> <ESC>0i
