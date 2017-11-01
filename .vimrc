@@ -84,9 +84,9 @@ set pastetoggle=<F6>
 "vmap <F5> : w!/tmp/x1<CR>
 "vmap <F6> : r /tmp/x1<CR>
 nmap <F7> :reg<CR>
-nmap <F8> :TagbarToggle<CR>
 map <F9> <Esc>:tabm
 imap <F9> <Esc>:tabm
+nmap <F11> :TagbarToggle<CR>
 map <F12> :BufExplorer<CR>
 map <Backspace> Xi
 " http://vim.wikia.com/wiki/Search_for_visually_selected_text
