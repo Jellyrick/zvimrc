@@ -12,18 +12,7 @@
 5. `make check`
 
 ### Install vim master
-1. `./configure --with-features=huge \    
-            --enable-multibyte \
-            --enable-rubyinterp=yes \
-            --enable-pythoninterp=yes \
-            --with-python-config-dir=/usr/lib/python2.7/config \
-            --enable-python3interp=yes \
-            --with-python3-config-dir=/usr/lib/python3.5/config \
-            --enable-perlinterp=yes \
-            --enable-luainterp=yes \
-            --enable-cscope \
-            --prefix=/usr/local/vim-8.x`
-
+1. `./configure --with-features=huge --enable-multibyte --enable-rubyinterp=yes --enable-pythoninterp=yes --with-python-config-dir=/usr/lib/python2.7/config --enable-python3interp=yes --with-python3-config-dir=/usr/lib/python3.5/config --enable-perlinterp=yes --enable-luainterp=yes --enable-cscope --prefix=/usr/local/vim-8.x`
 2. `make -j16`
 3. `sudo make install`
 
