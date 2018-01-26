@@ -6,12 +6,12 @@ if [ $# -lt 2 ]; then
 fi
 MACHINES=$1
 USERNAME=$2
-pssh -H $MACHINES -l $USERNAME "cd /home/$USERNAME; rm -fr ~/.vim"
-prsync -avzr -l $USERNAME H "$MACHINES" -X '--exclude="*.tar.xz" --exclude="*.pack"' ~/.vim /home/$USERNAME/
-prsync -avzr -l $USERNAME H "$MACHINES" /usr/local/zsh-master /home/$USERNAME/
-prsync -avzr -l $USERNAME H "$MACHINES" /usr/local/tmux-master /home/$USERNAME/
-prsync -avzr -l $USERNAME H "$MACHINES" /usr/local/vim-8.x /home/$USERNAME/
-prsync -avzr -l $USERNAME H "$MACHINES" /usr/local/ctags-5.8 /home/$USERNAME/
+pssh -l $USERNAME -H $MACHINES "cd /home/$USERNAME; rm -fr ~/.vim"
+prsync -avzr -l $USERNAME -H "$MACHINES" -X '--exclude="*.tar.xz" --exclude="*.pack"' ~/.vim /home/$USERNAME/
+prsync -avzr -l $USERNAME -H "$MACHINES" /usr/local/zsh-master /home/$USERNAME/
+prsync -avzr -l $USERNAME -H "$MACHINES" /usr/local/tmux-master /home/$USERNAME/
+prsync -avzr -l $USERNAME -H "$MACHINES" /usr/local/vim-8.x /home/$USERNAME/
+prsync -avzr -l $USERNAME -H "$MACHINES" /usr/local/ctags-5.8 /home/$USERNAME/
 pssh -l $USERNAME -H "$MACHINES" -t0 -Px '-A -tt' "sudo cp -fr /home/$USERNAME/tmux-master /usr/local && rm -fr /home/zhangjiguo/tmux-master"
 pssh -l $USERNAME -H "$MACHINES" -t0 -Px '-A -tt' "sudo cp -fr /home/$USERNAME/zsh-master /usr/local && rm -fr /home/zhangjiguo/zsh-master"
 pssh -l $USERNAME -H "$MACHINES" -t0 -Px '-A -tt' "sudo cp -fr /home/$USERNAME/vim-8.x /usr/local && rm -fr /home/zhangjiguo/vim-8.x"
