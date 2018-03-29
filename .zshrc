@@ -92,6 +92,7 @@ alias glg="git log"
 alias psauxg="ps aux | grep -v grep | grep -i "
 alias watch="watch -d"
 alias history="history -i" # history $start_line $end_line
+alias gdb="/usr/local/gdb-8.1/bin/gdb"
 
 [ -f /usr/local/tmux-master/bin/tmux ] && alias tmux='/usr/local/tmux-master/bin/tmux -2u' || alias tmux="tmux -2 -u"
 [ -f /usr/local/zsh-master/bin/zsh ] && alias zsh='/usr/local/zsh-master/bin/zsh' || which zsh
