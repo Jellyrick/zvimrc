@@ -157,3 +157,7 @@ au TabLeave * let g:lasttab = tabpagenr()
 set backspace=2
 set wildmenu wildmode=full 
 set wildchar=<Tab> wildcharm=<C-Z>
+
+let g:lasttab = 1
+nmap <C-T> :exe "tabn ".g:lasttab<CR>
+au TabLeave * let g:lasttab = tabpagenr()
