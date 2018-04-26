@@ -3,6 +3,7 @@
 #set print object on
 #set print union on
 set breakpoint pending on
+set overload-resolution off
 
 python
 import sys
