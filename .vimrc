@@ -9,14 +9,13 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'tpope/vim-fugitive'
 Plugin 'vim-scripts/bufexplorer.zip'
 Plugin 'tpope/vim-surround'
 Plugin 'klen/python-mode'
 "Plugin 'benmills/vimux'
 Plugin 'mileszs/ack.vim' " sudo yum install ack
 Plugin 'majutsushi/tagbar'
+Plugin 'Yggdroot/indentLine'
 "Plugin 'vim-scripts/EnhancedJumps'
 "Plugin 'vim-scripts/ingo-library'
 "Plugin 'vim-scripts/taglist.vim'
@@ -161,3 +160,5 @@ set wildchar=<Tab> wildcharm=<C-Z>
 let g:lasttab = 1
 nmap <C-T> :exe "tabn ".g:lasttab<CR>
 au TabLeave * let g:lasttab = tabpagenr()
+
+let g:pymode_options_max_line_length=100
