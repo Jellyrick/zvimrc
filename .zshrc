@@ -81,7 +81,7 @@ alias mv="mv -iv"
 alias ping="ping -n"
 alias rsync="rsync --no-perms -avzP"
 alias msh="mosh"
-command -v autossh > /dev/null && alias ssh="autossh -A" || alias ssh="ssh -A"
+command -v autossh > /dev/null && alias ssh="autossh -t -A" || alias ssh="ssh -t -A"
 alias pssh="/usr/local/pssh-2.3.1/bin/pssh -t0 -P -x '-A -tt'"
 alias prsync='prsync -avzr -x "--no-perms"'
 alias gdf="git difftool"
