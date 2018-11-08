@@ -125,6 +125,7 @@ alias 8='cd -8'
 alias 9='cd -9'
 
 alias d='dirs -v | head -10'
+alias python3='/usr/local/python-3.6.5/bin/python'
 
 ulimit -c unlimited
 
