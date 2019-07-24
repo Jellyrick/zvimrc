@@ -128,7 +128,7 @@ alias d='dirs -v | head -10'
 alias python3='/usr/local/python-3.6.5/bin/python'
 alias pip3='/usr/local/python-3.6.5/bin/pip'
 
-ulimit -c unlimited
+ulimit -c 0
 
 command -v keychain > /dev/null && eval `keychain --eval id_rsa`
 
@@ -172,7 +172,7 @@ fi
 # use -Wl,-rpath=xxx,-rpath-link=xxx -L -I代替
 #export LD_LIBRARY_PATH=/usr/lib/:/usr/lib64/:/usr/local/cuda/lib64/:/usr/lib64/cudnn/:/usr/lib64/cudnn-v3/:/usr/lib64/atlas:/usr/lib64/mpich/lib:/usr/local/lib
 #export CPLUS_INCLUDE_PATH=:/usr/include/mpich-x86_64/:/usr/local/cuda/include:/usr/local/cuda/samples/common/inc:/usr/local/include
-export PATH=~/bin/:/bin:/usr/bin:/usr/local/cuda/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/ibutils/bin:/sbin:/usr/sbin/:/sbin:/usr/sbin/:/usr/lib64/mpich/bin:/usr/local/pssh-2.3.1/bin:/usr/local/node-v6.10.1/bin
+export PATH=~/bin/:/bin:/usr/bin:/usr/local/cuda/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/ibutils/bin:/sbin:/usr/sbin/:/sbin:/usr/sbin/:/usr/lib64/mpich/bin:/usr/local/pssh-2.3.1/bin:/usr/local/node-10.15.1/bin
 export UV_THREADPOOL_SIZE=8
 export DMLC_INTERFACE=ib0
 
@@ -199,3 +199,17 @@ if [[ `tmux -V` == "tmux master" ]] && [[ `tmux ls` != "" ]]; then
         tmux bind-key '|' split-window -h -c "#{pane_current_path}"
     fi
 fi
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+#export SDKMAN_DIR="/home/zhangjiguo/.sdkman"
+#[[ -s "/home/zhangjiguo/.sdkman/bin/sdkman-init.sh" ]] && source "/home/zhangjiguo/.sdkman/bin/sdkman-init.sh"
+#
+#export TVM_HOME=/home/zhangjiguo/tvm_server
+#export PYTHONPATH=$TVM_HOME/python:$TVM_HOME/topi/python:$TVM_HOME/nnvm/python:${PYTHONPATH}
+#export TVM_TRACKER_HOST=0.0.0.0
+#export TVM_TRACKER_PORT=7777
+#export TVM_NDK_CC=/home/zhangjiguo/work/android-toolchain-arm64/bin/aarch64-linux-android-g++
+#export ANDROID_HOME=/home/zhangjiguo/work
+#export PATH=/usr/local/gradle-4.10.2/bin:$PATH
+#export PATH=/usr/local/apache-maven-3.5.4/bin:$PATH
+#export PATH=/home/zhangjiguo/work/android-ndk-r16b/build/:$PATH 

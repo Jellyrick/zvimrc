@@ -6,20 +6,20 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'kien/ctrlp.vim'
-Plugin 'godlygeek/tabular'
+" Plugin 'godlygeek/tabular'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'vim-scripts/bufexplorer.zip'
-Plugin 'tpope/vim-surround'
+" Plugin 'tpope/vim-surround'
 Plugin 'klen/python-mode'
-"Plugin 'benmills/vimux'
-Plugin 'mileszs/ack.vim' " sudo yum install ack
+" Plugin 'benmills/vimux'
+" Plugin 'mileszs/ack.vim' " sudo yum install ack
 Plugin 'majutsushi/tagbar'
 Plugin 'Yggdroot/indentLine'
-"Plugin 'vim-scripts/EnhancedJumps'
-"Plugin 'vim-scripts/ingo-library'
-"Plugin 'vim-scripts/taglist.vim'
-"Plugin 'jiangmiao/auto-pairs'
+" Plugin 'vim-scripts/EnhancedJumps'
+" Plugin 'vim-scripts/ingo-library'
+" Plugin 'vim-scripts/taglist.vim'
+" Plugin 'jiangmiao/auto-pairs'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -162,3 +162,4 @@ nmap <C-T> :exe "tabn ".g:lasttab<CR>
 au TabLeave * let g:lasttab = tabpagenr()
 
 let g:pymode_options_max_line_length=100
+autocmd Filetype json let g:indentLine_setConceal = 0
