@@ -60,8 +60,8 @@ bindkey -M vicmd '^K' vi-forward-word-end
 bindkey -M viins '^K' vi-forward-word-end
 bindkey -M viins "^v" vi-kill-eol
 bindkey -M viins "^D" kill-word
-bindkey -M vicmd '/' history-incremental-pattern-search-backward
-bindkey -M vicmd '?' history-incremental-pattern-search-forward
+# bindkey -M vicmd '/' history-incremental-pattern-search-backward
+# bindkey -M vicmd '?' history-incremental-pattern-search-forward
 bindkey -M viins '^R' history-incremental-pattern-search-backward
 bindkey -M viins '^S' history-incremental-pattern-search-forward
 bindkey "^P" vi-up-line-or-history
@@ -92,12 +92,14 @@ alias glg="git log"
 alias psauxg="ps aux | grep -v grep | grep -i "
 alias watch="watch -d"
 alias history="history -i" # history $start_line $end_line
-alias gdb="/usr/local/gdb-8.1/bin/gdb"
+alias gdb="/usr/local/gdb-8.3.1/bin/gdb"
+alias cmake="/usr/local/cmake-3.15.4/bin/cmake"
 
 [ -f /usr/local/tmux-master/bin/tmux ] && alias tmux='/usr/local/tmux-master/bin/tmux -2u' || alias tmux="tmux -2 -u"
 [ -f /usr/local/zsh-master/bin/zsh ] && alias zsh='/usr/local/zsh-master/bin/zsh' || which zsh
 
-export EDITOR=vim
+export EDITOR=/usr/local/vim-8.x/bin/vim
+alias vi="vim"
 
 mesg n
 
@@ -172,7 +174,7 @@ fi
 # use -Wl,-rpath=xxx,-rpath-link=xxx -L -I代替
 #export LD_LIBRARY_PATH=/usr/lib/:/usr/lib64/:/usr/local/cuda/lib64/:/usr/lib64/cudnn/:/usr/lib64/cudnn-v3/:/usr/lib64/atlas:/usr/lib64/mpich/lib:/usr/local/lib
 #export CPLUS_INCLUDE_PATH=:/usr/include/mpich-x86_64/:/usr/local/cuda/include:/usr/local/cuda/samples/common/inc:/usr/local/include
-export PATH=~/bin/:/bin:/usr/bin:/usr/local/cuda/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/ibutils/bin:/sbin:/usr/sbin/:/sbin:/usr/sbin/:/usr/lib64/mpich/bin:/usr/local/pssh-2.3.1/bin:/usr/local/node-10.15.1/bin
+export PATH=/usr/local/vim-8.x/bin:/usr/local/cuda/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/ibutils/bin:/sbin:/usr/sbin/:/sbin:/usr/sbin/:/usr/lib64/mpich/bin:/usr/local/pssh-2.3.1/bin:/usr/local/node-10.15.1/bin:/bin:/usr/bin
 export UV_THREADPOOL_SIZE=8
 export DMLC_INTERFACE=ib0
 
