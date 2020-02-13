@@ -164,3 +164,5 @@ au TabLeave * let g:lasttab = tabpagenr()
 
 let g:pymode_options_max_line_length=100
 autocmd Filetype json let g:indentLine_setConceal = 0
+
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip   
