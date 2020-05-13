@@ -82,7 +82,7 @@ alias ping="ping -n"
 alias rsync="rsync --no-perms -avzP"
 alias msh="mosh"
 command -v autossh > /dev/null && alias ssh="autossh -t -A" || alias ssh="ssh -t -A"
-alias pssh="/usr/local/pssh-2.3.1/bin/pssh -t0 -P -x '-A -tt'"
+alias pssh="/usr/bin/pssh -t0 -P -x '-A -tt'"
 alias prsync='prsync -avzr -x "--no-perms"'
 alias gdf="git difftool"
 alias gck="git checkout"
@@ -171,10 +171,11 @@ if [ -S $SSH_AUTH_SOCK ] && ! [ -h $SSH_AUTH_SOCK ]; then
     export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
 fi
 
+export GOPATH=${HOME}/.go
 # use -Wl,-rpath=xxx,-rpath-link=xxx -L -I代替
 #export LD_LIBRARY_PATH=/usr/lib/:/usr/lib64/:/usr/local/cuda/lib64/:/usr/lib64/cudnn/:/usr/lib64/cudnn-v3/:/usr/lib64/atlas:/usr/lib64/mpich/lib:/usr/local/lib
 #export CPLUS_INCLUDE_PATH=:/usr/include/mpich-x86_64/:/usr/local/cuda/include:/usr/local/cuda/samples/common/inc:/usr/local/include
-export PATH=/usr/local/vim-8.x/bin:/usr/local/cuda/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/ibutils/bin:/sbin:/usr/sbin/:/sbin:/usr/sbin/:/usr/lib64/mpich/bin:/usr/local/pssh-2.3.1/bin:/usr/local/node-10.15.1/bin:/bin:/usr/bin
+export PATH=/home/zhangjiguo/node-v12.16.1-linux-x64/bin:/usr/local/valgrind-3.15.0/bin:/usr/local/go-1.13.4/bin:/usr/local/cmake-3.15.4/bin:/usr/local/vim-8.x/bin:/usr/local/cuda/bin:/usr/lib64/mpich/bin:/usr/local/pssh-2.3.1/bin:/usr/local/node-10.15.1/bin:/bin:/usr/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/ibutils/bin:/sbin:/usr/sbin/:/sbin:/usr/sbin/
 export UV_THREADPOOL_SIZE=8
 export DMLC_INTERFACE=ib0
 

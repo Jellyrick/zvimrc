@@ -12,7 +12,8 @@ Plugin 'vim-airline/vim-airline-themes'
 " Plugin 'vim-scripts/bufexplorer.zip'
 Plugin 'jlanzarotta/bufexplorer'
 " Plugin 'tpope/vim-surround'
-Plugin 'klen/python-mode'
+Plugin 'ken/python-mode'
+" Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 " Plugin 'benmills/vimux'
 " Plugin 'mileszs/ack.vim' " sudo yum install ack
 Plugin 'majutsushi/tagbar'
@@ -30,7 +31,7 @@ let g:ycm_min_num_identifier_candidate_chars = 2
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_filepath_completion_use_working_dir = 1
-let g:ycm_disable_for_files_larger_than_kb = 50
+let g:ycm_disable_for_files_larger_than_kb = 200
 "let g:ycm_filetype_whitelist = { 'python': 1, 'cpp': 1, 'javascript': 1}
 "let g:ycm_collect_identifiers_from_tags_files = 1
 "let g:ycm_seed_identifiers_with_syntax = 1
@@ -39,9 +40,13 @@ let g:ycm_confirm_extra_conf = 0
 "let g:ycm_collect_identifiers_from_comments_and_strings = 1
 "let g:ycm_server_use_vim_stdout = 1
 let g:ycm_goto_buffer_command = 'new-or-existing-tab'
+let g:ycm_filetype_blacklist = {'cmake': 1}
+let g:ycm_filetype_specific_completion_to_disable = {"cmake": 1}
+
 nnoremap <leader>gc :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
 nnoremap <C-]> :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
 "let g:EclimCompletionMethod = 'omnifunc'
 "imap JJ  <c-x><c-f> "when file big, use vimcp to complete path
 
