@@ -1,11 +1,11 @@
 #!/bin/bash -f
 
-# current_window_idx=`/usr/local/tmux-master/bin/tmux -2u list-window | grep "(active)$" | awk -F'[ :]' '{print $1}'`
+current_window_idx=`/usr/local/tmux-master/bin/tmux -2u list-window | grep "(active)$" | awk -F'[ :]' '{print $1}'`
 # current_used_idxs=`/usr/local/tmux-master/bin/tmux -2u list-window | awk -F'[ :]' '{print $1}' | tr '\n' ' ' | sed 's/ $//g'`
 # echo $current_window_idx 
 # echo $current_used_idxs
 
-next_window_idx=`/usr/local/tmux-master/bin/tmux list-window | awk -F'[ :]' '{arr[$1]++}END{c=1; while(c in arr) c+=1; print c}'`
+next_window_idx=`/usr/local/tmux-master/bin/tmux list-window | awk -v c="$current_window_idx" -F'[ :]' '{arr[$1]++}END{while(c in arr) c+=1; print c}'`
 # echo $next_window_idx
 
 /usr/local/tmux-master/bin/tmux new-window -c "#{pane_current_path}" -t $next_window_idx
