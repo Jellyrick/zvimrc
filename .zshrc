@@ -175,7 +175,7 @@ export GOPATH=${HOME}/.go
 # use -Wl,-rpath=xxx,-rpath-link=xxx -L -I代替
 #export LD_LIBRARY_PATH=/usr/lib/:/usr/lib64/:/usr/local/cuda/lib64/:/usr/lib64/cudnn/:/usr/lib64/cudnn-v3/:/usr/lib64/atlas:/usr/lib64/mpich/lib:/usr/local/lib
 #export CPLUS_INCLUDE_PATH=:/usr/include/mpich-x86_64/:/usr/local/cuda/include:/usr/local/cuda/samples/common/inc:/usr/local/include
-export PATH=/home/zhangjiguo/node-v12.16.1-linux-x64/bin:/usr/local/valgrind-3.15.0/bin:/usr/local/go-1.13.4/bin:/usr/local/cmake-3.15.4/bin:/usr/local/vim-8.x/bin:/usr/local/cuda/bin:/usr/lib64/mpich/bin:/usr/local/pssh-2.3.1/bin:/usr/local/node-10.15.1/bin:/bin:/usr/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/ibutils/bin:/sbin:/usr/sbin/:/sbin:/usr/sbin/
+export PATH=/usr/local/tmux-master/bin/:/home/zhangjiguo/apache-jmeter-5.2.1/bin:/home/zhangjiguo/node-v12.16.1-linux-x64/bin:/usr/local/valgrind-3.15.0/bin:/usr/local/go-1.13.4/bin:/usr/local/cmake-3.15.4/bin:/usr/local/vim-8.x/bin:/usr/local/cuda/bin:/usr/lib64/mpich/bin:/usr/local/pssh-2.3.1/bin:/usr/local/node-10.15.1/bin:/bin:/usr/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/ibutils/bin:/sbin:/usr/sbin/:/sbin:/usr/sbin/
 export UV_THREADPOOL_SIZE=8
 export DMLC_INTERFACE=ib0
 
