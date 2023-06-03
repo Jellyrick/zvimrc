@@ -5,6 +5,7 @@ HISTFILE=~/.histfile
 HISTSIZE=10000
 SAVEHIST=10000
 setopt appendhistory autocd beep extendedglob notify HIST_IGNORE_DUPS SHARE_HISTORY INC_APPEND_HISTORY HIST_SAVE_NO_DUPS HIST_FIND_NO_DUPS EXTENDED_HISTORY HIST_EXPIRE_DUPS_FIRST histignorespace
+
 bindkey -v
 # End of lines configured by zsh-newuser-install
 eval $(dircolors -b)
@@ -96,9 +97,10 @@ alias gdb="/usr/local/gdb-8.3.1/bin/gdb"
 alias cmake="/usr/local/cmake-3.15.4/bin/cmake"
 
 [ -f /usr/local/tmux-master/bin/tmux ] && alias tmux='/usr/local/tmux-master/bin/tmux -2u' || alias tmux="tmux -2 -u"
-[ -f /usr/local/zsh-master/bin/zsh ] && alias zsh='/usr/local/zsh-master/bin/zsh' || which zsh
+# [ -f /usr/local/zsh-master/bin/zsh ] && alias zsh='/usr/local/zsh-master/bin/zsh' || which zsh
+[ -f /usr/local/zsh-5.9/bin/zsh ] && alias zsh='/usr/local/zsh-5.9/bin/zsh' || which zsh
 
-export EDITOR=/usr/local/vim-8.x/bin/vim
+# export EDITOR=/usr/local/vim-8.x/bin/vim
 alias vi="vim"
 
 mesg n
@@ -127,8 +129,8 @@ alias 8='cd -8'
 alias 9='cd -9'
 
 alias d='dirs -v | head -10'
-alias python3='/usr/local/python-3.6.5/bin/python'
-alias pip3='/usr/local/python-3.6.5/bin/pip'
+alias python3='/usr/local/python-3.8.12/bin/python'
+# alias pip3='/usr/local/python-3.6.5/bin/pip'
 
 ulimit -c 0
 
@@ -172,10 +174,15 @@ if [ -S $SSH_AUTH_SOCK ] && ! [ -h $SSH_AUTH_SOCK ]; then
 fi
 
 export GOPATH=${HOME}/.go
+export GO111MODULE=on
+export GOPROXY=https://goproxy.cn,direct
+
 # use -Wl,-rpath=xxx,-rpath-link=xxx -L -I代替
-#export LD_LIBRARY_PATH=/usr/lib/:/usr/lib64/:/usr/local/cuda/lib64/:/usr/lib64/cudnn/:/usr/lib64/cudnn-v3/:/usr/lib64/atlas:/usr/lib64/mpich/lib:/usr/local/lib
+# export LD_LIBRARY_PATH=/usr/local/cuda-9.2/lib64:/usr/local/cudnn-v7.2-for-cuda-9.2/lib64:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/home/zhangjiguo/cuda-11.3.1/lib64/:/home/zhangjiguo/cudnn-11.3-linux-x64-v8.2.1.32/lib64:/home/zhangjiguo/TensorRT-8.0.3.4/lib
 #export CPLUS_INCLUDE_PATH=:/usr/include/mpich-x86_64/:/usr/local/cuda/include:/usr/local/cuda/samples/common/inc:/usr/local/include
-export PATH=/usr/local/tmux-master/bin/:/home/zhangjiguo/apache-jmeter-5.2.1/bin:/home/zhangjiguo/node-v12.16.1-linux-x64/bin:/usr/local/valgrind-3.15.0/bin:/usr/local/go-1.13.4/bin:/usr/local/cmake-3.15.4/bin:/usr/local/vim-8.x/bin:/usr/local/cuda/bin:/usr/lib64/mpich/bin:/usr/local/pssh-2.3.1/bin:/usr/local/node-10.15.1/bin:/bin:/usr/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/ibutils/bin:/sbin:/usr/sbin/:/sbin:/usr/sbin/
+# export PATH=~/.local/bin/:/usr/local/tmux-master/bin/:/home/zhangjiguo/apache-jmeter-5.2.1/bin:/home/zhangjiguo/node-v12.16.1-linux-x64/bin:/usr/local/valgrind-3.15.0/bin:/usr/local/go-1.14.15/bin:/usr/local/cmake-3.15.4/bin:/usr/local/vim-8.x/bin:/usr/local/cuda/bin:/usr/lib64/openmpi/bin/:/usr/local/pssh-2.3.1/bin:/usr/local/node-10.15.1/bin:/bin:/usr/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/ibutils/bin:/sbin:/usr/sbin/:/sbin:/usr/sbin/
+export PATH=/world/data-gpu-16/zhangjiguo/third-parts/ffmpeg-4.2.2-amd64-static:/world/data-gpu-16/zhangjiguo/third-parts/cmake-3.15.4/bin:/world/data-gpu-16/zhangjiguo/third-parts/cuda-11.3.1/bin/:/world/data-gpu-16/zhangjiguo/third-parts/ninja-1.11.1/:/world/data-gpu-16/zhangjiguo/third-parts/gcc-9.4/bin/:~/.local/bin/:/usr/local/tmux-master/bin/:/home/zhangjiguo/apache-jmeter-5.2.1/bin:/usr/local/valgrind-3.15.0/bin:/usr/local/go-1.14.15/bin:/usr/local/vim-8.x/bin:/usr/lib64/openmpi/bin/:/usr/local/pssh-2.3.1/bin:/bin:/usr/bin:/usr/local/bin:/usr/local/sbin:/opt/ibutils/bin:/sbin:/usr/sbin/
 export UV_THREADPOOL_SIZE=8
 export DMLC_INTERFACE=ib0
 

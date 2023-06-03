@@ -9,3 +9,4 @@ next_window_idx=`/usr/local/tmux-master/bin/tmux list-window | awk -v c="$curren
 # echo $next_window_idx
 
 /usr/local/tmux-master/bin/tmux new-window -c "#{pane_current_path}" -t $next_window_idx
+/usr/local/tmux-master/bin/tmux rename-window "+"
