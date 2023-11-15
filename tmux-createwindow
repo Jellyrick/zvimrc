@@ -10,7 +10,6 @@ else
     tmux_bin=tmux
 fi
 
-echo $tmux_bin
 current_window_idx=`$tmux_bin -2u list-window | grep "(active)$" | awk -F'[ :]' '{print $1}'`
 next_window_idx=`$tmux_bin list-window | awk -v c="$current_window_idx" -F'[ :]' '{arr[$1]++}END{while(c in arr) c+=1; print c}'`
 $tmux_bin new-window -c "#{pane_current_path}" -t $next_window_idx
