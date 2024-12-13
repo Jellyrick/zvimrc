@@ -69,6 +69,7 @@ bindkey "^P" vi-up-line-or-history
 bindkey "^N" vi-down-line-or-history
 
 alias vim="/usr/local/vim-8.x/bin/vim"
+alias diff="/world/data-gpu-16/zhangjiguo/third-parts/diffutils-3.10/bin/diff"
 alias vimdiff="/usr/local/vim-8.x/bin/vimdiff"
 alias ls="ls --color=auto --show-control-chars"
 alias less="less -r"
@@ -87,7 +88,8 @@ alias pssh="/usr/bin/pssh -t0 -P -x '-A -tt'"
 alias prsync='prsync -avzr -x "--no-perms"'
 alias gdf="git difftool"
 alias gck="git checkout"
-alias gst="git status"
+alias gst="git status -uno"
+alias gsta="git status"
 alias gad="git add"
 alias glg="git log"
 alias psauxg="ps aux | grep -v grep | grep -i "
@@ -95,6 +97,7 @@ alias watch="watch -d"
 alias history="history -i" # history $start_line $end_line
 alias gdb="/usr/local/gdb-8.3.1/bin/gdb"
 alias cmake="/usr/local/cmake-3.15.4/bin/cmake"
+alias wget="/world/data-gpu-16/zhangjiguo/third-parts/wget-1.21/bin/wget"
 
 [ -f /usr/local/tmux-master/bin/tmux ] && alias tmux='/usr/local/tmux-master/bin/tmux -2u' || alias tmux="tmux -2 -u"
 # [ -f /usr/local/zsh-master/bin/zsh ] && alias zsh='/usr/local/zsh-master/bin/zsh' || which zsh
@@ -129,15 +132,13 @@ alias 8='cd -8'
 alias 9='cd -9'
 
 alias d='dirs -v | head -10'
-alias python3='/usr/local/python-3.8.12/bin/python'
-# alias pip3='/usr/local/python-3.6.5/bin/pip'
 
 ulimit -c 0
 
 command -v keychain > /dev/null && eval `keychain --eval id_rsa`
 
 CONNECT_IP=$(echo $SSH_CONNECTION | awk '{print $3}')
-PROMPT="%B%F{red}%n%f%K{blue}%F{white}@%f%k%F{magenta}${CONNECT_IP}%f:%F{green}%/%f:%b "
+PROMPT="%F{magenta}${CONNECT_IP}%f:%F{green}%/%f:%b "
 RPROMPT='%B%F{yellow}%D{%H:%M:%S.%.}%f%b'
 
 #RPROMPT='%B%F{blue}%(?..%? )%(1j.[%j&] .)%f%F{yellow}%D{%H:%M:%S.%.}%f%b'
@@ -182,7 +183,7 @@ export GOPROXY=https://goproxy.cn,direct
 export LD_LIBRARY_PATH=/home/zhangjiguo/cuda-11.3.1/lib64/:/home/zhangjiguo/cudnn-11.3-linux-x64-v8.2.1.32/lib64:/home/zhangjiguo/TensorRT-8.0.3.4/lib
 #export CPLUS_INCLUDE_PATH=:/usr/include/mpich-x86_64/:/usr/local/cuda/include:/usr/local/cuda/samples/common/inc:/usr/local/include
 # export PATH=~/.local/bin/:/usr/local/tmux-master/bin/:/home/zhangjiguo/apache-jmeter-5.2.1/bin:/home/zhangjiguo/node-v12.16.1-linux-x64/bin:/usr/local/valgrind-3.15.0/bin:/usr/local/go-1.14.15/bin:/usr/local/cmake-3.15.4/bin:/usr/local/vim-8.x/bin:/usr/local/cuda/bin:/usr/lib64/openmpi/bin/:/usr/local/pssh-2.3.1/bin:/usr/local/node-10.15.1/bin:/bin:/usr/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/ibutils/bin:/sbin:/usr/sbin/:/sbin:/usr/sbin/
-export PATH=/world/data-gpu-16/zhangjiguo/third-parts/ffmpeg-4.2.2-amd64-static:/world/data-gpu-16/zhangjiguo/third-parts/cmake-3.15.4/bin:/world/data-gpu-16/zhangjiguo/third-parts/cuda-11.3.1/bin/:/world/data-gpu-16/zhangjiguo/third-parts/ninja-1.11.1/:/world/data-gpu-16/zhangjiguo/third-parts/gcc-9.4/bin/:~/.local/bin/:/usr/local/tmux-master/bin/:/home/zhangjiguo/apache-jmeter-5.2.1/bin:/usr/local/valgrind-3.15.0/bin:/usr/local/go-1.14.15/bin:/usr/local/vim-8.x/bin:/usr/lib64/openmpi/bin/:/usr/local/pssh-2.3.1/bin:/bin:/usr/bin:/usr/local/bin:/usr/local/sbin:/opt/ibutils/bin:/sbin:/usr/sbin/
+export PATH=/world/data-gpu-16/zhangjiguo/third-parts/miniconda3/bin1:/world/data-gpu-16/zhangjiguo/third-parts/ffmpeg-4.2.2-amd64-static:/world/data-gpu-16/zhangjiguo/third-parts/cmake-3.15.4/bin:/world/data-gpu-16/zhangjiguo/third-parts/cuda-11.3.1/bin/:/world/data-gpu-16/zhangjiguo/third-parts/ninja-1.11.1/:/world/data-gpu-16/zhangjiguo/third-parts/gcc-9.4/bin/:~/.local/bin/:/usr/local/tmux-master/bin/:/home/zhangjiguo/apache-jmeter-5.2.1/bin:/usr/local/valgrind-3.15.0/bin:/usr/local/go-1.14.15/bin:/usr/local/vim-8.x/bin:/usr/lib64/openmpi/bin/:/usr/local/pssh-2.3.1/bin:/bin:/usr/bin:/usr/local/bin:/usr/local/sbin:/opt/ibutils/bin:/sbin:/usr/sbin/
 export UV_THREADPOOL_SIZE=8
 export DMLC_INTERFACE=ib0
 
@@ -223,3 +224,5 @@ fi
 #export PATH=/usr/local/gradle-4.10.2/bin:$PATH
 #export PATH=/usr/local/apache-maven-3.5.4/bin:$PATH
 #export PATH=/home/zhangjiguo/work/android-ndk-r16b/build/:$PATH 
+export EDITOR=vim
+export PYTHONHTTPSVERIFY=0
